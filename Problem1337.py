@@ -1,5 +1,5 @@
 class Solution:
-    def kWeakestRows(self, mat, k):
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         
         m = len(mat)
         
