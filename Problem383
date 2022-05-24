@@ -1,0 +1,17 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        
+        veredict = None
+        
+        new_mag = magazine
+        
+        for i in range(len(ransomNote)):
+            if ransomNote[i] in new_mag:
+                index = new_mag.index(ransomNote[i])
+                new_mag = new_mag[0 : index  ] + new_mag[index + 1  :]
+                veredict = True
+            else:
+                veredict = False
+                break
+        
+        return veredict
