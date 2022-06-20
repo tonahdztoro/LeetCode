@@ -1,0 +1,7 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        for _ in s:
+            if len(s) != 0:
+                s = s.replace('()','').replace('[]','').replace('{}','')
+        veredict = (len(s) == 0)
+        return veredict
