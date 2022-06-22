@@ -1,0 +1,23 @@
+def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:
+        
+        for i in range(len(heights)):
+            if len(heights) == 1:
+                return 0
+            else:
+                differences = []
+                for j in range(len(heights) - 1):
+                    if heights[j] < heights[j+1]:
+                        differences.append(heights[j+1] - heights[j])
+                if len(differences) == 0:
+                    return len(heights) - 1
+                else:
+                    sort_dif = sorted(differences)
+                    for k in range(ladders):
+                        if len(sort_dif) != 0:
+                            sort_dif.pop()
+                        else:
+                            pass
+                    if sum(sort_dif) <= bricks:
+                        return len(heights) - 1
+                    else:
+                        heights.pop()
